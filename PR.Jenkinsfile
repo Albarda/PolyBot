@@ -4,8 +4,8 @@ pipeline {
     stages {
         stage('Unittest') {
             steps {
+                sh 'pip install --upgrade python-telegram-bot'
                 sh 'pip3 install python-telegram-bot'
-
                 sh 'python3 -m pytest --junitxml results.xml tests/*.py'
             }
         }
