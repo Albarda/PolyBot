@@ -12,5 +12,11 @@ pipeline {
                 echo "testing"
             }
         }
+        post {
+    always {
+        junit allowEmptyResults: true, testResults: 'results.xml'
+    }
+}
+
     }
 }
