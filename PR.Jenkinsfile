@@ -6,6 +6,7 @@ pipeline {
             steps {
                 
                 sh 'pip3 install --upgrade python-telegram-bot'
+                sh 'pip install --upgrade pytest'
                 sh 'python3 -m pytest --junitxml results.xml tests/*.py'
             }
         }
