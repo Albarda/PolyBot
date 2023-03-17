@@ -1,4 +1,4 @@
-from telegram.ext import Updater, MessageHandler, Filters
+from telegram.ext import Updater, MessageHandler, filters
 from utils import search_download_youtube_video
 from loguru import logger
 
@@ -10,7 +10,7 @@ class Bot:
         self.updater = Updater(token, use_context=True)
 
         # add _message_handler as main internal msg handler
-        self.updater.dispatcher.add_handler(MessageHandler(Filters.text, self._message_handler))
+        self.updater.dispatcher.add_handler(MessageHandler(filtersilters.text, self._message_handler))
 
     def start(self):
         """Start polling msgs from users, this function never returns"""
