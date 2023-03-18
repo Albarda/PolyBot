@@ -17,7 +17,7 @@ pipeline {
             }
         }
         stage('pylint') {
-            step {
+            steps {
                 sh 'python3 -m pylint *.py'
             }
         }
