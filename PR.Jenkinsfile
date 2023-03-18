@@ -5,8 +5,9 @@ pipeline {
         stage('Unittest') {
             steps {
                 
-                sh 'pip3 install --upgrade python-telegram-bot'
-                sh 'pip3 install --upgrade pytest'
+                sh 'pip3 install python-telegram-bot'
+                sh 'pip3 install pytest'
+                sh 'pip3 install pylint'
                 sh 'python3 -m pytest --junitxml results.xml tests/*.py'
             }
         }
@@ -15,12 +16,11 @@ pipeline {
                 echo "testing"
             }
         }
-    }
-post {
-    always {
-        junit allowEmptyResults: true, testResults: 'results.xml'
-    }
-}
+        stage('pylint') {
+            step {
+                sh 'python3 -m pylint *.py'
+            }
+        }
 
-    
+    }
 }
