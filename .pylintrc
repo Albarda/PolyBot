@@ -1,0 +1,50 @@
+[MASTER]
+
+# Specify the Python version you are using.
+python=3.9
+
+# Add the paths to any additional modules you want to check.
+# e.g. load-plugins=pylint_django
+load-plugins=
+
+# Add the names of any additional modules or packages that should be considered
+# part of your project. Pylint will check them for errors as well.
+# e.g. extension-pkg-whitelist=numpy
+extension-pkg-whitelist=
+
+# Control the amount of messages pylint will emit. Available levels:
+# - HIGH: show only the very high confidence messages
+# - INFERENCE: show high confidence and some inference messages
+# - INFERENCE_FAILURE: show high confidence, inference and failure messages
+# - UNDEFINED: show all messages
+# You can also choose to enable or disable certain categories of messages.
+# e.g. disable=C,R
+#      enable=W
+disable=
+enable=
+
+# The format of the output. The default is text, but you can also use other
+# formats like JSON, HTML, or XML.
+output-format=text
+
+# Specify the output file.
+output-file=
+
+# Specify the severity threshold (a number between 0 and 10) for each message
+# category. Categories are defined by a single letter code, and the available
+# categories are: C, R, W, E, F.
+# e.g. msg-template={path}:{line}:{column}:{category}:{msg} ({symbol})
+#      max-line-length=120
+#      [MESSAGES CONTROL]
+#      c=0
+#      r=0
+#      w=0
+#      e=0
+#      f=0
+[MESSAGES CONTROL]
+
+c=0
+r=0
+w=0
+e=0
+f=0
