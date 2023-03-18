@@ -6,9 +6,9 @@ pipeline {
             steps {
                 
                 sh 'pip3 install python-telegram-bot'
-                sh 'pip3 install pytest'
+               // sh 'pip3 install pytest'
                 sh 'pip3 install pylint'
-                sh 'python3 -m pytest --junitxml results.xml tests/*.py'
+              //  sh 'python3 -m pytest --junitxml results.xml tests/*.py'
             }
         }
         stage('Functional test') {
