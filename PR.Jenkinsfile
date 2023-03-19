@@ -4,6 +4,7 @@ pipeline {
 
 
     stages {
+        withCredentials([usernamePassword(credentialsId: 'git-hub-ron', passwordVariable: 'pass', usernameVariable: 'user')])
         stage('Unittest') {
             steps {
                 
