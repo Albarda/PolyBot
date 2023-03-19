@@ -4,8 +4,7 @@ pipeline {
 
 
     stages {
-        withCredentials([usernamePassword(credentialsId: 'github-login', passwordVariable: 'pass', usernameVariable: 'user')])
-        {
+
         stage('Unittest') {
             steps {
                 
@@ -23,6 +22,7 @@ pipeline {
             parallel {
                 stage('testing') {
             steps {
+
                 sh 'python3 -m pytest --junitxml results.xml tests/*.py'
             }
         }
@@ -45,4 +45,4 @@ pipeline {
 
     }
 }
-}
+
