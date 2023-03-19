@@ -70,7 +70,7 @@ pipeline {
                 stage('testing') {
                     steps {
                         sh 'python3 -m pytest --junitxml results.xml tests/*.py --.telegramToken=$TELEGRAM_TOKEN'
-                '
+
                     }
                 }
 
