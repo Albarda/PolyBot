@@ -69,7 +69,7 @@ pipeline {
             parallel {
                 stage('testing') {
                     steps {
-                        sh 'python3 -m pytest --junitxml results.xml tests/*.py --.telegramToken=$TELEGRAM_TOKEN'
+                        sh 'python3 -m pytest --junitxml results.xml tests/*.py --telegram-token=$TELEGRAM_TOKEN'
 
                     }
                 }
