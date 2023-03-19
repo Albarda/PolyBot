@@ -46,5 +46,5 @@ pipeline {
         }//stage pylint
 
     } //pipeline
-
+}
 
