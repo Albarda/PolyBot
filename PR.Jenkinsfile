@@ -14,26 +14,26 @@ pipeline {
                 sh 'pip3 install -r requirements.txt'
 
 
-                } #steps
-        } #stage Unittesttte
+                } //steps
+        } //stage Unittesttte
         stage("parallel stage") {
             when {
                 branch 'microservices'
-            } #when
+            } //when
             failFast true
             parallel {
                 stage('testing') {
             steps {
 
                 sh 'python3 -m pytest --junitxml results.xml tests/*.py'
-            } #steps
-        } #stage testing
+            } //steps
+        } //stage testing
          stage('Functional test') {
             steps {
                 echo "testing"
-            } #steps
-        } #stage Functional test
-    } #stage parallel stage
+            } //steps
+        } //stage Functional test
+    } //stage parallel stage
 
 
 
@@ -42,9 +42,9 @@ pipeline {
         stage('pylint') {
             steps {
                 sh 'python3 -m pylint *.py'
-            }#steps
-        }#stage pylint
+            }//steps
+        }//stage pylint
 
-    } #pipeline
+    } //pipeline
 
 
