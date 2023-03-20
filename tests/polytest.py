@@ -2,14 +2,7 @@ import unittest
 from unittest.mock import MagicMock
 from bot import Bot, QuoteBot
 from loguru import logger
-import argparse
 
-parser = argparse.ArgumentParser()
-parser.add_argument('--telegram-token', required=True)
-args = parser.parse_args()
-
-# use the value of the telegram-token argument
-_token = args.telegram_token
 
 class TestBot(unittest.TestCase):
 
