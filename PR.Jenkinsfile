@@ -28,7 +28,7 @@ pipeline {
                 stage('testing') {
                     steps {
                      withCredentials([file(credentialsId: '.telegramToken', variable: 'TELEGRAM_TOKEN')]){
-                        sh "cp .telegramToken ${TELEGRAM_TOKEN} "
+                        sh "cp ${TELEGRAM_TOKEN} .telegramToken"
                         sh 'python3 -m pytest --junitxml results.xml tests/*.py'
                        }
                     }
