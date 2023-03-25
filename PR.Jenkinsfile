@@ -1,17 +1,17 @@
 pipeline {
 
-    agent{  
-     docker { withCredentials([
-                    usernamePassword(
-                        credentialsId: 'docker-login',
-                        passwordVariable: 'DOCKERHUB_PASSWORD',
-                        usernameVariable: 'DOCKERHUB_USERNAME'
-                    )
-                ])
-        image 'jenkins-agent-python'
-        args  '--user root -v /var/run/docker.sock:/var/run/docker.sock'
-    
-    }
+   agent {
+        docker {
+            image 'jenkins-agent-python'
+            args '--user root -v /var/run/docker.sock:/var/run/docker.sock'
+            withCredentials([
+                usernamePassword(
+                    credentialsId: 'docker-login',
+                    passwordVariable: 'DOCKERHUB_PASSWORD',
+                    usernameVariable: 'DOCKERHUB_USERNAME'
+                )
+            ])
+        }
     }
 
     stages {
