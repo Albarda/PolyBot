@@ -44,10 +44,11 @@
 
 
 pipeline {
-    agent{
+    agent{  
      docker {
-        image 'kubealon/private-course:jenkins-agent'
+        image 'jenkins-agent-python'
         args  '--user root -v /var/run/docker.sock:/var/run/docker.sock'
+    // kubealon/private-course:jenkins-agent
     }
     }
 
