@@ -16,11 +16,6 @@ pipeline {
                 sh 'pip3 install pytest'
                 sh 'pip3 install pylint'
                 sh 'pip3 install -r requirements.txt'
-
-                // Retrieve the Telegram token from the secret file and set it as an environment variable
-                // {
-                 //   sh "export TELEGRAM_TOKEN=${TELEGRAM_TOKEN}"
-               // }
             }
         }
 
@@ -33,7 +28,7 @@ pipeline {
                 stage('testing') {
                     steps {
                      withCredentials([file(credentialsId: '.telegramToken', variable: 'TELEGRAM_TOKEN')]){
-                        sh "cp ${TELEGRAM_TOKEN} .telegramToken"
+                        sh "cp .telegramToken ${TELEGRAM_TOKEN} "
                         sh 'python3 -m pytest --junitxml results.xml tests/*.py'
                        }
                     }
