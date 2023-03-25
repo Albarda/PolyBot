@@ -29,7 +29,7 @@ pipeline {
                     steps {
                      withCredentials([file(credentialsId: '.telegramToken', variable: 'TELEGRAM_TOKEN')]){
                         sh "cp ${TELEGRAM_TOKEN} .telegramToken"
-                        sh ".telegramToken=$(cat .telegramToken | tr -d '\n' | tr -d '\r')"
+                        sh ".telegramToken=\$(cat .telegramToken | tr -d '\n' | tr -d '\r')"
                         sh 'python3 -m pytest --junitxml results.xml tests/*.py'
                        }
                     }
