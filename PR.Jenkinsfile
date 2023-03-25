@@ -4,13 +4,7 @@ pipeline {
         docker {
             image 'jenkins-agent-python'
             args '--user root -v /var/run/docker.sock:/var/run/docker.sock'
-            withCredentials([
-                usernamePassword(
-                    credentialsId: 'docker-login',
-                    passwordVariable: 'DOCKERHUB_PASSWORD',
-                    usernameVariable: 'DOCKERHUB_USERNAME'
-                )
-            ])
+           
         }
     }
 
