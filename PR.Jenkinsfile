@@ -46,7 +46,7 @@
 pipeline {
     agent{
      docker {
-        image 'jenkins-agent:latest'
+        image 'kubealon/private-course:jenkins-agent'
         args  '--user root -v /var/run/docker.sock:/var/run/docker.sock'
     }
     }
