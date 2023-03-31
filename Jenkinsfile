@@ -1,7 +1,7 @@
 pipeline {
     agent { 
         docker {
-            image 'kubealon/private-course:jenkins-agent'
+            image 'vaporio/jenkins-agent-python38'
             args '--user root -v /var/run/docker.sock:/var/run/docker.sock'
         }
     }
