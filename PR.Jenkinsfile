@@ -9,12 +9,10 @@ pipeline {
     }
 
     stages {
-        stage('Unittest') {
+        stage('requierments') {
             steps {
                
-                sh 'pip3 install python-telegram-bot'
-                sh 'pip3 install pytest'
-                sh 'pip3 install pylint'
+               
                 sh 'pip3 install -r requirements.txt'
             }
         }
