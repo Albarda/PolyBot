@@ -1,7 +1,7 @@
 #test
 #
 
-FROM python:3.9.16-slim
+FROM python:slim-bookworm
 ARG TELEGRAM_TOKEN
 WORKDIR /devops/polybot/PolyBot
 COPY requirements.txt requirements.txt
